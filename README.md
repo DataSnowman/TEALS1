@@ -17,9 +17,15 @@ To create the codespace, you'll need the following:
 
     `` This provides a hosted instance of Visual Studio Code, in which you'll be able to code and run the Java programs for the TEALS lab exercises. ``
 
-- If you don't already have Visual Studio Online plan, create one. This is used to track resource utlization by your Visual Studio Online environments. 
+1. Click `Get started`
 
-## Configure your Codespace Environment
+![codespacesGetStarted](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/codespacesGetStarted.png)
+
+2. Click `Sign in`
+
+![codespacesSignIn](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/codespacesSignIn.png)
+
+## Configure your GitHub
 
 1. Click [Here](https://github.com/DataSnowman/TEALS1) and sign in with your GitHub Username
 
@@ -41,23 +47,31 @@ To create the codespace, you'll need the following:
 
 4. Set up the codespace environment:
 
-    - Click [HERE] and sign in using the Microsoft account associated with your Azure subscription.
+    - Click [HERE](https://online.visualstudio.com/) and sign in using the Microsoft account associated with your Azure subscription.
 
 [![Open in Visual Studio Online](https://img.shields.io/endpoint?style=social&url=https%3A%2F%2Faka.ms%2Fvso-badge)](https://online.visualstudio.com)
 
 ## Create a Visual Studio Online Codespace and Container
 
 1. Click `Create Codespace`
-    
+
+![codespacesCreate](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/codespacesCreate.png)
+
+- If you don't already have Visual Studio Online plan, create one. This is used to track resource utlization by your Visual Studio Online environments.
+
+![codespacesCreateBillingPlan](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/codespacesCreateBillingPlan.png)
+
     Then create an environment with the following settings:
 
-    **Environment Name**: A name for your environment - for example, `Java-Dev`
+![codespacesCreateEnv](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/codespacesCreateEnv.png)
 
-    **Git Repository**: `<GitHubUsername>/TEALS1`
+**Environment Name**: A name for your environment - for example, `Java-Dev`
 
-    **Instance Type**: `Basic (Linux) 2 cores, 4GB RAM`
+**Git Repository**: `<GitHubUsername>/TEALS1`
 
-    **Suspend idle environment after**: `30 minutes`
+**Instance Type**: `Basic (Linux) 2 cores, 4GB RAM`
+
+**Suspend idle environment after**: `30 minutes`
 
 2. Wait for the environment to be created, and then click `Connect` to connect to it. This will open a browser-based instance of Visual Studio Code.
 
@@ -67,43 +81,73 @@ To create the codespace, you'll need the following:
 
 ## Configure GitHub Username and email and Remote for Fork
 
+To open the terminal in your codespace you can ethier use key shortcut
+
+``
+Ctrl + `
+``
+
+![terminalshortcut](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/terminalshortcut.png)
+
+Or use the Application Menu select `Terminal>New Terminal`
+
+![terminalMenu](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/terminalMenu.png)
+
 In the terminal copy and paste the following commands:
 
-**Username**
+``pwd
+``
 
-Set an username in Git.
+``
+git status
+``
 
-Enter
+![terminalOutput](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/terminalOutput.png)
 
-`git config --global user.name "<GitHubusername>"`
+
+**Set an username in Git**
+
+Enter with your username replacing `<GitHubusername>`
+
+``
+git config --global user.name "<GitHubusername>"
+``
 
 Confirm that you have set the username correctly in Git:
 
 Enter
 
-`git config --global user.name`
+``
+git config --global user.name
+``
 
 Returns
 
-`GitHubusername`
+``
+YourGitHubusername
+``
 
-**Email**
+**Set an email in Git**
 
-Set an email address in Git.
+Enter with your email replacing `email@example.com`
 
-Enter
-
-`git config --global user.email "email@example.com"`
+``
+git config --global user.email "email@example.com"
+``
 
 Confirm that you have set the email address correctly in Git:
 
 Enter
 
-`git config --global user.email`
+``
+git config --global user.email
+``
 
 Returns
 
-`email@example.com`
+``
+Youremail@example.com
+``
 
 To list the current configured remote repository for your fork.
 
@@ -111,29 +155,63 @@ Setup Remote Upstream
 
 Enter
 
-`git remote -v`
+``
+git remote -v
+``
 
 Returns
 
+``
 > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
 > origin  https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
+``
 
 Specify a new remote upstream repository that will be synced with the fork.
 
 Enter
 
-`git remote add upstream https://github.com/DataSnowman/TEALS1.git`
+``
+git remote add upstream https://github.com/DataSnowman/TEALS1.git
+``
 
 Verify the new upstream repository you've specified for your fork.
 
 Enter
 
-`git remote -v`
+``
+git remote -v
+``
 
+Returns
+
+``
 > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (fetch)
 > origin    https://github.com/YOUR_USERNAME/YOUR_FORK.git (push)
 > upstream  https://github.com/DataSnowman/TEALS1.git (fetch)
 > upstream  https://github.com/DataSnowman/TEALS1.git (push)
+``
+
+Pull the upstream repository into your fork.
+
+Enter
+
+``
+git pull upstream master
+``
 
 ## Run HelloWorld Sample
+
+Find the HelloWorld program in sampleCode.  The code should look like this:
+
+``
+public class HelloWorld {
+    public static void main (String [] args) {
+        System.out.println("HelloWorld")
+    }
+}
+``
+
+Click on Run on the sidebar
+
+![run](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/run.png)
 
