@@ -206,7 +206,7 @@ Find the HelloWorld program in sampleCode.  The code should look like this:
 ``
 public class HelloWorld {
     public static void main (String [] args) {
-        System.out.println("HelloWorld")
+        System.out.println("HelloWorld");
     }
 }
 ``
@@ -215,3 +215,16 @@ Click on Run on the sidebar
 
 ![run](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/run.png)
 
+Click `Run and Debug'
+
+You should get the following output in the terminal
+
+![terminal](https://raw.githubusercontent.com/DataSnowman/TEALS1/master/images/terminal.png)
+
+Congrats! You are ready to right your own programs in the `studentWork` folder
+
+To save you open code you are going to frequently (suggested at the end of every class) run the following command in the terminal to push the changes to your forked repository.
+
+``
+git push origin master
+``
