@@ -13,7 +13,7 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-RUN sudo apt-get update
+RUN sudo apt-get update \
     && sudo apt-get install adduser
 
 RUN groupadd --gid $USER_GID $USERNAME \
