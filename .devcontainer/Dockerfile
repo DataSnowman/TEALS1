@@ -13,8 +13,9 @@ ARG USERNAME=vscode
 ARG USER_UID=1000
 ARG USER_GID=$USER_UID
 
-RUN sudo apt-get update \
-    && sudo apt-get install adduser
+# To fix issue of groupadd not found
+RUN apt-get update \
+    && apt-get install adduser
 
 RUN groupadd --gid $USER_GID $USERNAME \
     && useradd -s /bin/bash --uid $USER_UID --gid $USER_GID -m $USERNAME \
